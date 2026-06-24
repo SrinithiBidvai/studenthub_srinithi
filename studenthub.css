@@ -1,0 +1,105 @@
+#logo img{
+    width: 35px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+body{
+ margin: 0;
+ min-width: fit-content;
+ background: linear-gradient(to left, lightblue, lightgreen);
+}
+.navbar{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: rgba(8, 17, 37, 0.9);
+    padding: 10px;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+#name p{
+    margin: 0;
+    font-size: 27px;
+    color: aliceblue;
+
+}
+#name{
+    margin-right: auto;
+}
+.dash a{
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 25px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+
+}
+
+.dash a:hover{
+    background-color:rgba(8, 17, 37, 0.7) ;
+    
+}
+#home, #features ,#about   {
+    margin: 1.5%;
+    margin-bottom: 70px;
+
+}
+
+p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+#home a{
+    text-decoration: none;
+    border: 2px solid ;
+    border-color: black;
+    padding: 5px 10px;
+    border-radius: 12px;
+    background-color: rgba(8, 17, 37, 0.9);
+    color: white;
+    display:  inline-block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+#home a:hover{
+    background-color:rgba(8, 17, 37, 0.7);
+    
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -20px ;
+}
+.box div{
+    border: 1.5px solid rgba(8, 17, 37, 0.9) ;
+    border-radius: 10px;
+    background-color: rgb(221, 223, 227,0.3);
+    margin: 20px;
+    padding: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.448);
+    transition: 0.25s;
+}
+.box div:hover{
+    transform: translateY(-6px);
+}
+#footer{
+     background-color: rgba(8, 17, 37, 0.9);
+}
+#footer h5{
+    margin: 0px;
+    color: white;
+    padding: 10px;
+    font-size: medium;
+}
+
+
+

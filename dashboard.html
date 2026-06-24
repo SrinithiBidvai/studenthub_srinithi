@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <div id="logo">
+                <img src="logo.png" alt="logo">
+        </div>
+        <div id="name">
+            <p> Student Hub </p>
+        </div>
+        <div id="home">
+            <a href="index.html">Home</a>
+        </div>
+    </div>
+    <div id="trackers">
+        <div id="task-manager">
+            <h1>Need a productive day? Start by listing your tasks.</h1>
+            <div id="add-tasks">
+                <input type="text" id="new-task" placeholder="Add your first task...">
+                <button onclick="addTask()" id="add">Add</button>
+                <button onclick="cleartasks()" id="clear">Clear All </button>
+            </div>
+
+            <div id="whole-list">
+            </div>
+        </div>
+        <div id="habit-tracker">
+            <h1>A quick check-in for your daily habits.</h1>
+            <div class="habits">
+                <input type="checkbox"> Drink water
+            </div>
+            <div class="habits">
+                <input type="checkbox"> Study
+            </div>
+            <div class="habits">
+                <input type="checkbox"> Exercise
+            </div>
+            <div class="habits">
+                <input type="checkbox"> Read
+            </div>
+            <div class="habits">
+                <input type="checkbox"> Sleep on time
+            </div>
+            <div>
+                <button onclick="resetHabits()" id="resetHabits">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!--<div id="stopwatch">
+        <p id="time">00:00:00</p>
+        <div id="start">
+            <button onclick="start()">Start</button>    
+        </div>
+        <div id="pause">
+            <button onclick="pause()">Pause</button>
+        </div>
+        <div id="reset">
+            <button onclick="reset()">Reset</button>
+        </div>
+        
+    </div>-->
+
+    <div id="Stats">
+        <div id="statistics">
+                <p id="result"></p>
+        </div>
+    </div>
+    <script src="dashboard.js"></script>
+    
+</body>
+</html>
+
+
+
+
+
