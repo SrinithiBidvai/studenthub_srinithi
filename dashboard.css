@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background: linear-gradient(to left, rgb(173, 216, 230), rgb(148, 236, 148));
+    background-color: rgba(184, 220, 232, 0.885);
 }
 .navbar{
     display: flex;
@@ -45,10 +45,11 @@ body{
 #task-manager{
     margin-top: 3%;
     margin-left: 2.2%;
-    background-color: rgba(255, 255, 0, 0.4);
+    background-color: rgba(255, 255, 0, 0.456);
     padding: 20px;
    border: 1.5px solid  #1f2a44 ;
    border-radius: 30px;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 #task-manager h1 , #habit-tracker h1{
     margin-top: 0px;
@@ -87,7 +88,7 @@ p{
 .tasks {
     font-size: 24px;
     padding: 0px;
-    margin: 10px ;
+    margin: 15px ;
     display: flex;
     align-items: flex-start; /*will keep the del button after the first line in case of multiple line tasks*/
     color: #2c3e50;
@@ -118,10 +119,11 @@ p{
 #habit-tracker{
     margin-top: 3%;
     margin-right: 2.2%;
-    background-color: rgba(255, 166, 0, 0.486);
+    background-color: rgba(255, 166, 0, 0.567);
     padding: 20px;
    border: 1.5px solid  #1f2a44 ;
    border-radius: 30px;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .habits {
@@ -129,6 +131,14 @@ p{
     padding: 10px 12px;
     border-radius: 10px;
     margin-bottom: 10px;
+}
+
+#task-manager{
+    flex: 1.5;
+}
+
+#habit-tracker{
+    flex: 1;
 }
 
 #resetHabits{
@@ -144,4 +154,54 @@ p{
     margin-right: 20px;
 }
 
+#stats{
+    border: 1.5px solid black;
+    border-radius: 20px;
+    margin: 30px;
+}
+#stats div , #stats h2{
+    margin-left: 20px;
+}
+
+#stats{
+    background-color: #1f2a44;
+    border-radius: 20px;
+    margin: 30px;
+    padding: 15px 25px;
+    border: 1px solid rgba(255, 255, 255, 0.362);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+
+}
+
+#stats h2{
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+.completes{
+    color: white;
+
+}
+
+#habitsProgress , #statistics{
+    display: flex;
+    align-items: center;
+}
+
+#result{
+    color: #4CAF50;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+#progress{
+    color: #FFD54F;
+    font-weight: 500;
+    font-size: 22px;
+}
+#stats p{
+    margin: 5px 0;
+}
 

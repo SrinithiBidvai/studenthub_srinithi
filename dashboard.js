@@ -84,7 +84,7 @@ function createTask(taskText,index,completed=false){
             tasksCompleted--;
             task.style.textDecoration = "None";
         }
-        result.textContent=`Tasks Completed: ${tasksCompleted}/${totalNoOfTasks}`;
+        result.textContent=`${tasksCompleted}/${totalNoOfTasks}`;
     }
 
     document.getElementById("whole-list").append(task);
@@ -111,9 +111,9 @@ function createTask(taskText,index,completed=false){
             tasksCompleted--;
             }
         totalNoOfTasks--;
-        result.textContent=`Tasks Completed: ${tasksCompleted}/${totalNoOfTasks}`;
+        result.textContent=`${tasksCompleted}/${totalNoOfTasks}`;
     }
-    result.textContent=`Tasks Completed: ${tasksCompleted}/${totalNoOfTasks}`;
+    result.textContent=`${tasksCompleted}/${totalNoOfTasks}`;
 
 }
 
@@ -139,7 +139,7 @@ function cleartasks(){
         totalNoOfTasks = 0;
         tasksCompleted = 0;
 
-        result.textContent = `Tasks Completed: 0/0`;
+        result.textContent = `0/0`;
     }
 }
 
@@ -149,6 +149,28 @@ function resetHabits(){
         habit.checked=false;
     })
 }
+
+function updateHabitStatus(){
+
+    const habits=document.querySelectorAll(".habits input");
+    let habitsDone=0;
+    habits.forEach(habit => {
+            if (habit.checked==true){
+                habitsDone++;
+            }
+        })
+    if (habitsDone==5){
+        document.getElementById("progress").textContent="On track";
+    }
+    else{
+        document.getElementById("progress").textContent="Needs attention";
+    }
+    habits.forEach(habit => {
+    habit.addEventListener("change", updateHabitStatus);
+    });
+}
+updateHabitStatus();
+
 
 let savedTasks =
 JSON.parse(localStorage.getItem("tasks"));
@@ -161,7 +183,7 @@ if(savedTasks){
     tasksCompleted = taskList.filter(task => task.completed).length;
 
     result.textContent =
-    `Tasks Completed: ${tasksCompleted}/${totalNoOfTasks}`;
+    `${tasksCompleted}/${totalNoOfTasks}`;
 
     savedTasks.forEach((task,index) => {
         createTask(task.text,index,task.completed);
