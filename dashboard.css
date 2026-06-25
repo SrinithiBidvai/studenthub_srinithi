@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: rgba(184, 220, 232, 0.885);
+   background: linear-gradient(to left, lightblue, lightgreen);
 }
 .navbar{
     display: flex;
