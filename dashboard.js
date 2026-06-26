@@ -320,3 +320,70 @@ if(savedTimer){
 
     update();
 }
+
+
+
+
+const words = [
+"computer","the","friend","apple","today","school","yes","water","house","music",
+"study","orange","quick","family","coffee","window","book","hello","garden","phone",
+"bread","happy","teacher","river","please","strong","car","movie","banana","world",
+"learn","chair","okay","smile","road","game","table","work","cloud","thanks",
+"mother","keyboard","light","pizza","child","travel","door","morning","football","kind",
+"market","screen","always","flower","dream","student","bike","laugh","room","paper",
+"doctor","time","clean","juice","forest","brother","computer","drive","night","lesson",
+"watch","city","camera","sun","milk","team","building","slow","library","cookie",
+"country","friendship","beach","player","mouse","winter","pen","train","beautiful","college",
+"tea","grass","story","code","sister","explore","road","rain","simple","fruit",
+"money","monitor","father","ocean","burger","exercise","website","welcome","lake","shirt",
+"button","tomorrow","home","salt","ball","tree","office","walk","paper","honest",
+"hospital","music","summer","bag","class","create","shop","minute","afternoon","mountain",
+"program","moon","writing","cook","dream","printer","play","coffee","country","young",
+"reading","storm","health","window","mousepad","speaker","store","happy","banana","internet",
+"charger","running","cable","garden","hotel","forest","smile","market","bread","teacher",
+"apple","think","building","coffee","sport","clean","movie","camera","football","student",
+"rice","coffee","friend","better","laugh","village","desk","plane","second","basketball",
+"computer","travel","shirt","music","learn","door","good","juice","butter","week",
+"website","father","mother","exercise","question","answer","future","coffee","beautiful","world"
+];
+let typingText=" ";
+let typingStartTime = 0;
+function createTest(){
+    typingText="";
+    let i=0;
+    for(i=0;i<15;i++){
+        let index=Math.floor(Math.random()*words.length);
+        typingText+=words[index]+" ";
+    }
+
+    typingText+=".";
+    document.getElementById("typingText").textContent=typingText;
+    document.getElementById("typing").style.display = "none";
+    document.getElementById("challenge").style.display = "block";
+    document.getElementById("break").style.alignItems = "flex-start";
+   typingStartTime = Date.now();
+}
+const typedText = document.getElementById("challengeText");
+typedText.addEventListener("keydown",event =>{
+        if(event.key=="Enter"){
+            let typingEndTime = Date.now();
+            let timeTaken = (typingEndTime - typingStartTime) / 1000; 
+            let correctChars = 0;
+            let len=typedText.value.length;
+            if(len>typingText.length){
+                len=typingText.length;
+            }
+
+            for(let i = 0; i < len; i++){
+                if(typedText.value[i] === typingText[i]){
+                    correctChars++;
+                }
+            }
+
+            let totalWords = correctChars / 5;
+            let wpm = Math.round(totalWords / (timeTaken / 60));
+            let accuracy = Math.round((correctChars / typedText.value.length) * 100);
+            document.getElementById("speed").textContent=`Typing Speed: ${wpm}`;
+             document.getElementById("accuracy").textContent=`Accuracy: ${accuracy}`;
+        }
+    })
