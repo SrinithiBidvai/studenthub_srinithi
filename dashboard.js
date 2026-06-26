@@ -3,6 +3,8 @@ let tasksCompleted=0;
 let result=document.getElementById("result");
 const newTaskName=document.getElementById("new-task");
 let taskList=[];
+result.textContent = `0/0`;
+
 
 //for adding task
 function addTask(){
@@ -148,6 +150,7 @@ function resetHabits(){
     habits.forEach(habit => {
         habit.checked=false;
     })
+    saveHabits();
 }
 
 function updateHabitStatus(){
@@ -171,6 +174,26 @@ function updateHabitStatus(){
 }
 updateHabitStatus();
 
+const habits=document.querySelectorAll(".habits input");
+habits.forEach(habit => {
+    habit.addEventListener("change", saveHabits);
+});
+
+function saveHabits(){
+
+    let habitData = [];
+
+    habits.forEach(habit => {
+        habitData.push(habit.checked);
+    });
+
+    localStorage.setItem(
+        "habits",
+        JSON.stringify(habitData)
+    );
+}
+
+
 
 let savedTasks =
 JSON.parse(localStorage.getItem("tasks"));
@@ -190,6 +213,16 @@ if(savedTasks){
     });
 }
 
+let savedHabits =
+JSON.parse(localStorage.getItem("habits"));
+if(savedHabits){
+
+    habits.forEach((habit,index) => {
+        habit.checked = savedHabits[index];
+    });
+
+}
+updateHabitStatus();
 
 
 
@@ -212,12 +245,20 @@ function reset(){
     starttime=0;
     display.textContent=`00:00:00`;
     isrunning=false;
+    saveTimer();
+    let totalMinutes = Math.floor(elapsedtime / (1000 * 60));
+    let hours = Math.floor(totalMinutes / 60);
+    let minutes = totalMinutes % 60;
+
+document.getElementById("focusTime").textContent =
+`${hours}h ${minutes}m`;
 }
 function pause(){
     if (isrunning==true){
         clearInterval(timer);
         elapsedtime=Date.now()-starttime;
         isrunning=false;
+        saveTimer();
     }
 }
 function start(){
@@ -225,12 +266,17 @@ function start(){
         starttime=Date.now()-elapsedtime;
         timer=setInterval(update,100);
         isrunning=true;
+        saveTimer();
+        
     }
 
 }
 function update(){
-    const currtime=Date.now();
-    elapsedtime=currtime-starttime;
+    
+    if(isrunning){
+        const currtime=Date.now();
+        elapsedtime = currtime-starttime;
+    }
     let hours=Math.floor(elapsedtime/(1000*60*60));
     let mins=Math.floor(elapsedtime/(1000*60)%60);
     let secs=Math.floor(elapsedtime/1000%60);
@@ -238,5 +284,39 @@ function update(){
     mins=String(mins).padStart(2,"0");
     secs=String(secs).padStart(2,"0");
     display.textContent=`${hours}:${mins}:${secs}`;
+    saveTimer();  
+    let totalMinutes = Math.floor(elapsedtime / (1000 * 60));
+    let minutes = totalMinutes % 60;
+
+    document.getElementById("focusTime").textContent =
+    `${hours}h ${minutes}m`;
 }
 
+function saveTimer(){
+    localStorage.setItem(
+        "timer",
+        JSON.stringify({
+            elapsedtime: elapsedtime,
+            isrunning: isrunning
+        })
+    );
+}
+
+let savedTimer =
+JSON.parse(localStorage.getItem("timer"));
+
+let totalMinutes = Math.floor(elapsedtime / (1000 * 60));
+let hours = Math.floor(totalMinutes / 60);
+let minutes = totalMinutes % 60;
+
+document.getElementById("focusTime").textContent =
+`${hours}h ${minutes}m`;
+
+
+if(savedTimer){
+
+    elapsedtime = savedTimer.elapsedtime;
+    isrunning = false;   // Always start paused after refresh
+
+    update();
+}

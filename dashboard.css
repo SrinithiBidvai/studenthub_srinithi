@@ -170,6 +170,8 @@ p{
     padding: 15px 25px;
     border: 1px solid rgba(255, 255, 255, 0.362);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    width: 30%;
+    flex: 1.6;
 
 }
 
@@ -178,10 +180,12 @@ p{
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 25px;
+    font-weight: 550 ;
 }
 
 .completes{
     color: white;
+    font-family: 'Courier New', Courier, monospace;
 
 }
 
@@ -200,8 +204,79 @@ p{
     color: #FFD54F;
     font-weight: 500;
     font-size: 22px;
+    
 }
 #stats p{
     margin: 5px 0;
+}
+
+.stat-line{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    margin:10px 0;
+}
+
+#focusTime{
+    color:#b257d9;
+     font-weight: 500;
+    font-size: 22px;
+    
+}
+
+#stopwatch{
+    border: 1.5px solid black;
+    border-radius: 20px ;
+    margin: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    flex:0.7 ;
+}
+
+#stopwatch button{
+    margin: 10px;
+    margin-top: 0px;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 4px 10px;
+    border: none;
+}
+
+#time{
+    font-size: 28px;
+}
+
+#buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#stopwatch h2{
+    font-size: 25px;
+    font-weight: 600;
+    color: #1f2a44;
+    margin: 0;
+}
+
+#progressTimer{
+    display: flex;
+}
+
+#start button{
+    background-color: rgb(56, 142, 60,0.85);
+    color: white;
+    cursor: pointer;
+}
+#pause button{
+    background-color: rgba(238, 38, 38, 0.85);
+    color: white;
+    cursor: pointer;
+}
+#resetTimer button{
+    background-color: rgb(45, 61, 137,0.85);
+    color: white;
+    cursor: pointer;
 }
 

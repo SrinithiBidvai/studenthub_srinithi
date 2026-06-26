@@ -53,33 +53,43 @@
         </div>
     </div>
 
-    
-    <!--<div id="stopwatch">
-        <p id="time">00:00:00</p>
-        <div id="start">
-            <button onclick="start()">Start</button>    
+    <div id="progressTimer">
+         <div id="stats">
+            <h2>Today's Snapshot</h2>
+            <div id="statistics">
+                <p class="completes">Tasks Completed: </p>
+                <p id="result"></p>
+            </div>
+            <div id="habitsProgress"> 
+                <p class="completes">Daily Habits: </p>
+                <p id="progress"></p>
+            </div>    
+            <div class="stat-line">
+                <p class="completes">Study Time:</p>
+                <p id="focusTime">0 mins</p>
+            </div>
         </div>
-        <div id="pause">
-            <button onclick="pause()">Pause</button>
-        </div>
-        <div id="reset">
-            <button onclick="reset()">Reset</button>
-        </div>
-        
-    </div>-->
 
-    <div id="stats">
-        <h2>Today's Progress</h2>
-        <div id="statistics">
-            <p class="completes">Tasks Completed: </p>
-            <p id="result"></p>
+        <div id="stopwatch">
+            <h2>Focus Tracker</h2>
+            <p id="time">00:00:00</p>
+            <div id="buttons">
+                <div id="start">
+                <button onclick="start()">Start</button>    
+            </div>
+            <div id="pause">
+                <button onclick="pause()">Pause</button>
+            </div>
+            <div id="resetTimer">
+                <button onclick="reset()">Reset</button>
+            </div>
+            </div>
         </div>
-        <div id="habitsProgress"> 
-            <p class="completes">Daily Habits: </p>
-            <p id="progress"></p>
-        </div>
-                
     </div>
+
+ 
+
+
     <script src="dashboard.js"></script>
     
 </body>

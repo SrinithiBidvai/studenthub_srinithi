@@ -54,8 +54,37 @@ p{
     font-size: 20px;
     line-height: 1.5;
 }
+#home{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
 
-#home a{
+}
+
+#textHome{
+    flex: 1.2;
+}
+
+#dashImg{
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      border: 1px solid black;
+    border-radius: 10px;
+
+}
+
+#dashImg img{
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+   
+}
+
+#get-started{
     text-decoration: none;
     border: 2px solid ;
     border-color: black;
@@ -67,7 +96,7 @@ p{
     font-size: 20px;
     margin-top: 20px;
 }
-#home a:hover{
+#get-started:hover{
     background-color:rgba(8, 17, 37, 0.7);
     
 }
