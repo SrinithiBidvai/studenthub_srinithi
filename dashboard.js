@@ -351,7 +351,7 @@ let typingStartTime = 0;
 function createTest(){
     typingText="";
     let i=0;
-    for(i=0;i<15;i++){
+    for(i=0;i<20;i++){
         let index=Math.floor(Math.random()*words.length);
         typingText+=words[index]+" ";
     }
