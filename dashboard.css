@@ -1,6 +1,6 @@
 body{
     margin: 0;
-   background: linear-gradient(to left, lightblue, lightgreen);
+   background: linear-gradient(to left, rgba(178, 217, 230, 0.966), rgba(155, 237, 155, 0.961));
 }
 .navbar{
     display: flex;
@@ -42,16 +42,15 @@ body{
     background-color:rgba(8, 17, 37, 0.7) ;
     
 }
-#task-manager{
-    margin-top: 3%;
-    margin-left: 2.2%;
-    background-color: rgba(255, 255, 0, 0.456);
+.cards{
+    margin: 1.8%;
+    background-color: rgb(221, 223, 227,0.3);
     padding: 20px;
-   border: 1.5px solid  #1f2a44 ;
-   border-radius: 30px;
-   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.448);
 }
-#task-manager h1 , #habit-tracker h1{
+
+h1{
     margin-top: 0px;
     font-size: 25px;
     font-family: "Segoe UI", sans-serif;
@@ -59,71 +58,96 @@ body{
     color: #1f2a44;
     margin-bottom: 20px;
 }
-#add-tasks button , #add-tasks input {
+h4{
+    margin: 0;
+}
+
+h3{
+    margin: 20px;
+    margin-left: 0px;
+    color: #1f2a44;
+    font-family: "Segoe UI", sans-serif;
     font-size: 20px;
+    font-weight: 500;
+}
+
+input{
+    border: 1.5px solid #151d2e ;
     border-radius: 12px;
-    padding: 7px 11px;
-    margin-right: 10px;
-    cursor: pointer;
+}
+
+p{
+    font-size: 20px;
+    margin: 8px;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+    color:#1f2a44;
+    line-height: 1.5;
+}
+
+#new-task{
+    width: 55%;
+    font-size: 20px;
+    padding: 0px 8px;
 }
 #add-tasks{
     display: flex;
+    margin-bottom: 25px;
 }
-#add{
+.allButtons{
     background-color: #4CAF50;
     color: white;
     border: 2px solid #388E3C;
-    box-shadow: 0 4px 7px rgb(56, 142, 60,0.6);
+    border-radius: 12px;
+    padding: 7px 11px;
+    cursor: pointer;
+    box-shadow: 0 4px 7px rgba(43, 108, 46, 0.6);
+    font-size: 20px;
+}
+
+#add{
+    margin-left: 15px;
 }
 #clear{
     background-color: #1f2a44;
-    color: white;
-    border: 2px solid  #151d2e;
+    border-color: #151d2e;
     margin-left: auto;
-     box-shadow: 0 4px 6px rgb(21, 29, 46,0.6);
+     box-shadow: 0 4px 7px rgb(21, 29, 46,0.6);
 }
-p{
-    font-size: 20px;
-}
+
 .tasks {
-    font-size: 24px;
+    font-size: 22px;
     padding: 0px;
     margin: 15px ;
     display: flex;
-    align-items: flex-start; /*will keep the del button after the first line in case of multiple line tasks*/
-    color: #2c3e50;
+    align-items: flex-start; /* IMP-will keep the del button after the first line in case of multiple line tasks*/
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+    color: #252e42;
 }
 .delete{
-    margin-left: 10px;
+    margin-left: auto;
     align-items: center;
-    color: aliceblue;
-    border: 2px solid;
+    border: 1.5px solid;
     border-color: rgba(8, 17, 37,0.7);
     cursor: pointer;
-    background-color: #e74c3c;
+    background-color: #e74d3cf5;
+    font-size: 15px;
     color: white;
-    padding: 3px 7px;
+    padding: 3px 18px;
     border-radius: 8px;
+    margin-right: -10px;
     
 }
-.tasks input[type="checkbox"]{
+input[type="checkbox"]{
     min-width: 18px;
-    min-height: 18px
+    min-height: 18px;
+    accent-color: #2c374ee4;
+    cursor: pointer;
 }
 
 #trackers{
     display: flex;
-    gap:2.5% ;
-
-}
-#habit-tracker{
-    margin-top: 3%;
-    margin-right: 2.2%;
-    background-color: rgba(255, 166, 0, 0.567);
-    padding: 20px;
-   border: 1.5px solid  #1f2a44 ;
-   border-radius: 30px;
-   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .habits {
@@ -131,6 +155,10 @@ p{
     padding: 10px 12px;
     border-radius: 10px;
     margin-bottom: 10px;
+    font-size: 18px;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+    color:#1f2a44;
 }
 
 #task-manager{
@@ -140,112 +168,42 @@ p{
 #habit-tracker{
     flex: 1;
 }
-
-#resetHabits{
-    font-size: 15px;
-    padding: 5px 10px;
-    margin-top: 3%;
-    cursor: pointer;
-    color: white;
-    background-color: #283554;
-    display: flex;
-    border-radius: 3px;
-    margin-left: auto;
-    margin-right: 20px;
-}
-
 #stats{
-    border: 1.5px solid black;
-    border-radius: 20px;
-    margin: 30px;
-}
-#stats div , #stats h2{
-    margin-left: 20px;
-}
-
-#stats{
-    background-color: #1f2a44;
-    border-radius: 20px;
-    margin: 30px;
-    padding: 15px 25px;
-    border: 1px solid rgba(255, 255, 255, 0.362);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    width: 30%;
-    flex: 0.9;
+    flex: 1.4;
 
 }
-
-#stats h2{
-    color: #ffffff;
-    margin-top: 0;
-    margin-bottom: 15px;
-    font-size: 25px;
-    font-weight: 550 ;
-}
-
 .completes{
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 8px;
+   font-size: 20px;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 400;
+    color: #252e42;
+    margin: 0;
 
 }
-
 #habitsProgress , #statistics{
     display: flex;
     align-items: center;
 }
-
-#result{
-    color: #4CAF50;
-    font-weight: 500;
-    font-size: 22px;
-}
-
-#progress{
-    color: #FFD54F;
-    font-weight: 500;
-    font-size: 22px;
-    
-}
-#stats p{
-    margin: 5px 0;
-}
-
 .stat-line{
     display:flex;
     align-items:center;
-    gap:4px;
-    margin:10px 0;
+}
+#resetHabits{
+    background-color: #1f2a44;
+    border-color: #151d2e;
+     display: flex;
+    margin-left: auto;
 }
 
-#focusTime{
-    color:#b257d9;
-     font-weight: 500;
-    font-size: 22px;
-    
+#progress , #focusTime, #result{
+    font-size: 20px;
+    font-weight: 530;
 }
+
+
 
 #stopwatch{
-    border: 1.5px solid black;
-    border-radius: 20px ;
-    margin: 30px;
-    padding: 20px;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.4);
-    flex:1 ;
-}
-
-#stopwatch button{
-    margin: 10px;
-    margin-top: 0px;
-    font-size: 18px;
-    border-radius: 10px;
-    padding: 4px 10px;
-    border: none;
-}
-
-#time{
-    font-size: 28px;
+    flex:1.2 ;
 }
 
 #buttons{
@@ -254,6 +212,28 @@ p{
     justify-content: center;
 }
 
+#startorpause i{
+    color: white;
+    border-radius: 50%;
+    padding: 8px 11px 8px 13px;
+    cursor: pointer;
+    box-shadow: 0 4px 7px rgba(43, 108, 46, 0.6);
+    font-size: 24px;
+    background-color: rgb(241, 58, 58)
+}
+#startorpause{
+    margin: 20px;
+    border: none;
+    background-color: #151d2e00;
+    margin-left: 0px;
+}
+
+#time{
+    font-size: 35px;
+    text-align: center;
+}
+
+
 #stopwatch h2{
     font-size: 25px;
     font-weight: 600;
@@ -261,71 +241,53 @@ p{
     margin: 0;
 }
 
+
+
 #progressTimer{
     display: flex;
 }
 
-#start button{
-    background-color: rgb(56, 142, 60,0.85);
-    color: white;
-    cursor: pointer;
-}
-#pause button{
-    background-color: rgba(238, 38, 38, 0.85);
-    color: white;
-    cursor: pointer;
-}
 #resetTimer button{
-    background-color: rgb(45, 61, 137,0.85);
     color: white;
     cursor: pointer;
+     background-color: #1f2a44;
+    border-color: #151d2e;
 }
 
 
 #break{
-    margin: 30px;
     flex: 2.1;
-
-    display: flex;
-    justify-content: center;   /* Horizontal center */
-    align-items: center;       /* Vertical center */
-    flex-direction: column;
-
-}
-#typing{
-    width: 400px;
-    padding: 20px 18px;
-    font-size: 26px;
-    border-radius: 16px;
-    background-color: #b257d9e0;
-    color: white;
-    border: 1.5px solid black;
-    cursor: pointer;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    box-shadow: 0 7px 10px rgba(0,0,0,0.3);
 }
 #break input{
-    font-size: 20px;
-    width: 97%;
-    padding: 5px 2px;
+    font-size: 18px;
+    width: 95%;
+    padding: 5px 8px;
 }
 
 #challenge{
     display: none;
-    border: 1.5px solid black;
-    border-radius: 20px;
-    padding: 20px 20px;
-    background-color:  #b257d999;
-}
-
-#typingText{
-    font-size: 21px;
-    
-}
-h4{
     margin: 0;
 }
-h3{
-    margin: 10px;
-    margin-bottom: 0px;
+#challengeText{
+    margin-top: 4px;
 }
+#startChallenge p{
+    margin-bottom: 20px;
+    margin-left: 0px;
+    font-size: 18px;
+}
+
+#typingResult{
+    display: none;
+}
+#typingResult button{
+    font-size: 18px;
+}
+
+
+#typingText{
+    font-size: 19px;
+    margin-left: 0px;
+    margin-bottom: 11px;
+}
+

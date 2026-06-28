@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,18 +21,18 @@
         </div>
     </div>
     <div id="trackers">
-        <div id="task-manager">
+        <div id="task-manager" class="cards">
             <h1>Need a productive day? Start by listing your tasks.</h1>
             <div id="add-tasks">
                 <input type="text" id="new-task" placeholder="Add your first task...">
-                <button onclick="addTask()" id="add">Add</button>
-                <button onclick="cleartasks()" id="clear">Clear All </button>
+                <button onclick="addTask()" id="add" class="allButtons">Add</button>
+                <button onclick="cleartasks()" id="clear" class="allButtons">Clear All </button>
             </div>
 
             <div id="whole-list">
             </div>
         </div>
-        <div id="habit-tracker">
+        <div id="habit-tracker" class="cards">
             <h1>A quick check-in for your daily habits.</h1>
             <div class="habits">
                 <input type="checkbox"> Drink water
@@ -48,14 +50,14 @@
                 <input type="checkbox"> Sleep on time
             </div>
             <div>
-                <button onclick="resetHabits()" id="resetHabits">Reset</button>
+                <button onclick="resetHabits()" id="resetHabits" class="allButtons">Reset</button>
             </div>
         </div>
     </div>
 
     <div id="progressTimer">
-         <div id="stats">
-            <h2>Today's Snapshot</h2>
+         <div id="stats" class="cards">
+            <h1>Today's Snapshot</h1>
             <div id="statistics">
                 <p class="completes">Tasks Completed: </p>
                 <p id="result"></p>
@@ -66,33 +68,42 @@
             </div>    
             <div class="stat-line">
                 <p class="completes">Study Time:</p>
-                <p id="focusTime">0 mins</p>
+                <p id="focusTime">00h 0m</p>
             </div>
         </div>
 
-        <div id="stopwatch">
-            <h2>Focus Tracker</h2>
+        <div id="stopwatch" class="cards">
+            <h1>Focus Tracker</h1>
             <p id="time">00:00:00</p>
             <div id="buttons">
                 <div id="start">
-                <button onclick="start()">Start</button>    
-            </div>
-            <div id="pause">
-                <button onclick="pause()">Pause</button>
-            </div>
-            <div id="resetTimer">
-                <button onclick="reset()">Reset</button>
-            </div>
+                    <button onclick="handleTimer()" id="startorpause"> <i class="fa-solid fa-play"></i></button>    
+                </div>
+                <div id="resetTimer">
+                    <button onclick="reset()" class="allButtons">Reset</button>
+                </div>
             </div>
         </div>
-         <div id="break">
-            <button onclick="createTest()" id="typing">Refresh your mind with a quick typing challenge.</button>
+         <div id="break" class="cards">
+            <div id="startChallenge">
+                <h1>Typing Challenge</h1>
+                <p>Test your typing speed and accuracy with a quick challenge.
+Type the passage as quickly and accurately as you can.</p>
+                <button onclick="createTest()" id="typing" class="allButtons">Start Challenge</button>
+            </div>
+            
             <div id="challenge">
+                <h1>Typing Challenge</h1>
                 <p id="typingText"></p>
                 <h4> Press enter once finished.</h4>
                 <input type="text" placeholder="Type the above text here" id="challengeText">
+            </div>
+            <div id="typingResult">
+                <h1>Your Results</h1>
                 <h3 id="speed"></h3>
                 <h3 id="accuracy"></h3>
+                <button onclick="createTest()" id="typing" class="allButtons">Try Again</button>
+
             </div>
          </div>
     </div>
